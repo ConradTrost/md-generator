@@ -127,11 +127,11 @@ const questions = [
         message: 'Would you like to add a license?',
         default: false
     },
-    {   // -----> Add checkbox for if license is needed. Send to shields.io
-        type: 'checkbox',
+    {   // -----> Add checkbox for if license is needed. Send to shields.io // MIT, Apache. BSD 2. BSD 3, Mozilla Public License 2.0
+        type: 'list',
         name: 'license',
-        message: 'Enter license(s) (Check all that apply):',
-        choices: ['Apache', 'Apache 2', 'BSD', 'MIT', 'GPL', 'GPL (>= 2)'],
+        message: 'Enter license:',
+        choices: ['Apache', 'BSD 2', 'BSD 3', 'MIT', 'GNU GPL v2', 'GNU GPL v3', 'Mozilla Public License 2.0'],
         when: ({ confirmLicense }) => confirmLicense
     }
 ]; 
