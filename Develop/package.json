@@ -1,0 +1,19 @@
+{
+  "name": "markdown-generator",
+  "version": "1.0.0",
+  "description": "Generate a markdown quickly and easily with this markdown generatir",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.io/retro1967/readme-generator"
+  },
+  "keywords": [
+    "readme",
+    "generator"
+  ],
+  "author": "Conrad Trost",
+  "license": "ISC"
+}
