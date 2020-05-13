@@ -127,11 +127,11 @@ const questions = [
         message: 'Would you like to add a license?',
         default: false
     },
-    {   // -----> Add checkbox for if license is needed. Send to shields.io // MIT, Apache. BSD 2. BSD 3, Mozilla Public License 2.0
+    {
         type: 'list',
         name: 'license',
         message: 'Enter license:',
-        choices: ['Apache', 'BSD 2', 'BSD 3', 'MIT', 'GNU GPL v2', 'GNU GPL v3', 'Mozilla Public License 2.0'],
+        choices: ['Apache', '2-Clause BSD', '3-Clause BSD', 'MIT', 'GNU GPL v2', 'GNU GPL v3', 'Mozilla Public License 2.0'],
         when: ({ confirmLicense }) => confirmLicense
     }
 ]; 
@@ -168,4 +168,4 @@ function init() {
 // function call to initialize program
 init();
 
-// Add badges w/ shields.io then im done
+// Add information about license type!!!!!

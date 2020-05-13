@@ -14,10 +14,10 @@ function generateBadges(data) {
     if (data == 'Apache') {
       badges = '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)'
     };
-    if (data == 'BSD 2') {
+    if (data == '2-Clause BSD') {
       badges = '[![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)'
     };
-    if (data == 'BSD 3') {
+    if (data == '3-Clause BSD') {
       badges = '[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)'
     };
     if (data == 'MIT') {
@@ -32,6 +32,31 @@ function generateBadges(data) {
     if (data == 'GNU GPL v3') {
       badges = '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)'
     } return badges;
+};
+
+function generateURL(data) {
+  let url = '';
+  if (data == 'Apache') {
+    url = '(https://opensource.org/licenses/Apache-2.0)'
+  };
+  if (data == '2-Clause BSD') {
+    url = '(https://opensource.org/licenses/BSD-2-Clause)'
+  };
+  if (data == '3-Clause BSD') {
+    url = '(https://opensource.org/licenses/BSD-3-Clause)'
+  };
+  if (data == 'MIT') {
+    url = '(https://opensource.org/licenses/MIT)'
+  };
+  if (data == 'Mozilla Public License 2.0') {
+    url = '(https://opensource.org/licenses/MPL-2.0)'
+  };
+  if (data == 'GNU GPL v2') {
+    url = '(https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)'
+  };
+  if (data == 'GNU GPL v3') {
+    url = '(https://www.gnu.org/licenses/gpl-3.0)'
+  } return url;
 };
 
 // function to generate markdown for README
@@ -67,7 +92,8 @@ function generateMarkdown(data) {
   #### ${data.test}
 
   ## License
-  #### ${data.license}
+  #### This application is covered under the [${data.license}]${generateURL(data.license)} license.
+  #### Visit the link above to learn more about this license.
 
   ## Questions
 
