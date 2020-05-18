@@ -2,15 +2,6 @@ const generateMarkdown = require('./utils/generateMarkdown.js');
 const fs = require('fs');
 const inquirer = require('inquirer');
 
-// array of questions for user
-// Questions: 
-// Section {TITLE}  ----->  Self explanatory
-// Sections {Description, Installation, Usage, Contributing, and Tests}  ----->  Description, installation instructions, usage info, contribution guidelines, and test instructions
-// Section {LICENSE}    ----->  Option to choose license and then the badge is added from https://shields.io
-// Section {QUESTIONS}  ----->  Github username (link to profile), Email address (w/ instructions on how to reach person)
-// Table of contents with links to the sections
-
-
 const questions = [
     {
         type: 'input',
@@ -161,11 +152,11 @@ function init() {
             return generateMarkdown(answers)
         })
         .then(templateData => {
-            writeToFile('./Develop/dist/README.md', templateData)
+            writeToFile('./dist/README.md', templateData)
+            console.log('---------------------------');
+            console.log('Markdown file has been generated in Develop/dist.')
         })
 };
 
 // function call to initialize program
 init();
-
-// Add information about license type!!!!!

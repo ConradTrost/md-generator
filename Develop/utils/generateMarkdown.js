@@ -1,14 +1,3 @@
-// Make generator using node "inquirer"
-// Guide to professional README located in root (readme-guide.md) or https://github.com/coding-boot-camp/potential-enigma/blob/master/readme-guide.md
-
-// array of questions for user
-// Questions: 
-// Section {TITLE}  ----->  Self explanatory
-// Sections {Description, Installation, Usage, Contributing, and Tests}  ----->  Description, installation instructions, usage info, contribution guidelines, and test instructions
-// Section {LICENSE}    ----->  Option to choose license and then the badge is added from https://shield.io
-// Section {QUESTIONS}  ----->  Github username (link to profile), Email address (w/ instructions on how to reach person)
-// Table of contents with links to the sections
-
 function generateBadges(data) {
   let badges = '';
     if (data == 'Apache') {
@@ -63,8 +52,11 @@ function generateURL(data) {
 function generateMarkdown(data) {
   return `
   # ${data.title}
-  ### ${generateBadges(data.license)}
-  ### Developed by ${data.author}
+  ${generateBadges(data.license)}
+  ### Developed by [**${data.author}**](https://github.com/${data.github})
+
+  ## Description
+  #### ${data.description}
 
   ### Table of Contents:
 
@@ -76,29 +68,26 @@ function generateMarkdown(data) {
   **[License](#license)**<br>
   **[Questions](#questions)**<br>
 
-  ## Description
-  #### ${data.description}
-
   ## Installation Instructions
-  #### ${data.install}
+  ${data.install}
 
   ## Usage Instructions 
-  #### ${data.usage}
+  ${data.usage}
 
   ## Contributions
-  #### ${data.contribution}
+  ${data.contribution}
 
   ## Test Instructions
-  #### ${data.test}
+  ${data.test}
 
   ## License
-  #### This application is covered under the [${data.license}]${generateURL(data.license)} license.
-  #### Visit the link above to learn more about this license.
+  This application is covered under the [${data.license}]${generateURL(data.license)} license.
+  Visit the link above to learn more about this license.
 
   ## Questions
 
-  ### Find me on [Github](https://github.com/${data.github})
-  ### Email me with questions at ${data.email}
+  Find me on [Github](https://github.com/${data.github})
+  Email me with questions at ${data.email}
 `;
 }
 
